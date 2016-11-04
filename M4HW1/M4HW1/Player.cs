@@ -12,6 +12,7 @@ namespace M4HW1
         private int empireRep = 0;
         private int unaffilliatedRep = 0;
         private int gold = 0;
+        private bool receivedLoot = false;
 
         public Player()
         {
@@ -23,29 +24,22 @@ namespace M4HW1
             empireRep = empire;
             unaffilliatedRep = unaff;
 
-            gold = money;
-
+            receivedLoot = received;
         }
 
         public int rebel { get { return rebelRep; } set { rebelRep = value; } }
         public int empire { get { return empireRep; } set { empireRep = value; } }
         public int unaff { get { return unaffilliatedRep; } set { unaffilliatedRep = value; } }
-        public int money { get { return gold; } set { gold = value; } }
+        public bool received { get { return receivedLoot; } set { receivedLoot = value; } } 
 
-
+        public Rooms currentLocation { get; set; }
+        public Items currentItemInvetory { get; set; }
 
         public string factionRep()
         {
             string output = "Rebel Repuation = " + rebelRep + "\n" +
                             "Empire Reputation = " + empireRep + "\n" +
                             "Unaffiliated Reputation = " + unaffilliatedRep + "\n";
-
-            return output;
-        }
-
-        public string goldAmt()
-        {
-            String output = "Gold Balance = " + gold + "\n";
 
             return output;
         }

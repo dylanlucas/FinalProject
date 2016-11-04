@@ -12,6 +12,11 @@ namespace M4HW1
         private int _HealthPoints;
         private int _AttackDamage;
         private bool _CanAttack = false;
+        public bool r9spawn = false;
+        public bool r10spawn = false;
+        public bool r11spawn = false;
+        public bool r12spawn = false;
+        public bool r13spawn = false;
 
         public int health { get { return _HealthPoints; } set { _HealthPoints = value; } }
         public int attackDamage { get { return _AttackDamage; } set { _AttackDamage = value; } }
@@ -86,16 +91,6 @@ namespace M4HW1
             }
 
             return monsterFaction.ToString();
-        }
-
-                public string getMoney()
-        {
-            Random random = new Random();
-
-            int result;
-            result = random.Next(500);
-
-            return result.ToString();
         }
     }
 }

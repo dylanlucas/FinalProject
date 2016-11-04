@@ -8,6 +8,8 @@ namespace M4HW1
 {
     class NPC : MobileObject
     {
+        public bool thanked = true;
+
         public NPC()
         {
             health = 100;
