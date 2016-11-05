@@ -60,6 +60,7 @@ namespace M4HW1
 
             //Initialize the back color and other things of the faction reputation rich text box
             playerStatusRTB.BackColor = Color.White;
+            playerStatusRTB.Text = playerOne.factionRep();
 
             //Initialize the back color of the location rich text box
             locationRTB.BackColor = Color.White;
@@ -1122,6 +1123,20 @@ namespace M4HW1
                         npcRTB.Text += "Wait.... what's in that bottle that you have?\n";
                         MessageBox.Show("Say 'pond water'");
                     }
+                    else
+                    {
+                        textBox1.Text = "";
+                        npcRTB.Text += "It's time to FIGHT!";
+
+                        attackButton.Enabled = true;
+
+                        opponent.onSpawn();
+                        opponent.health = 500;
+                        oppHealthLabel.Text = opponent.health.ToString();
+                        opponent.attackDamage = 100;
+                        oppADLabel.Text = opponent.attackDamage.ToString();
+                        oppFDLabel.Text = opponent.getMOBFaction();
+                    }
                 }
 
                 if (textBox1.Text.ToLower() == "pond water")
@@ -1155,6 +1170,8 @@ namespace M4HW1
                     textBox1.Text = "";
                     textBox1.Focus();
                     npcRTB.Text += "THEN FIGHT ME\n";
+
+                    attackButton.Enabled = true;
 
                     opponent.onSpawn();
                     opponent.health = 500;
@@ -1221,6 +1238,7 @@ namespace M4HW1
                     oppHealthLabel.Text = opponent.health.ToString();
                     opponent.attackDamage = 25;
                     oppADLabel.Text = opponent.attackDamage.ToString();
+                    oppFDLabel.Text = opponent.getMOBFaction().ToString();
                     opponent.r9spawn = true;
 
                     MessageBox.Show("FIGHT ME NOW!");
@@ -1248,6 +1266,7 @@ namespace M4HW1
                     oppHealthLabel.Text = opponent.health.ToString();
                     opponent.attackDamage = 25;
                     oppADLabel.Text = opponent.attackDamage.ToString();
+                    oppFDLabel.Text = opponent.getMOBFaction().ToString();
                 }
                 else if (opponent.r10spawn == true)
                 {
@@ -1272,6 +1291,7 @@ namespace M4HW1
                     oppHealthLabel.Text = opponent.health.ToString();
                     opponent.attackDamage = 25;
                     oppADLabel.Text = opponent.attackDamage.ToString();
+                    oppFDLabel.Text = opponent.getMOBFaction().ToString();
                 }
                 else if (opponent.r11spawn == true)
                 {
@@ -1296,6 +1316,7 @@ namespace M4HW1
                     oppHealthLabel.Text = opponent.health.ToString();
                     opponent.attackDamage = 26;
                     oppADLabel.Text = opponent.attackDamage.ToString();
+                    oppFDLabel.Text = opponent.getMOBFaction().ToString();
                 }
                 else if (opponent.r12spawn == true)
                 {
@@ -1320,6 +1341,7 @@ namespace M4HW1
                     oppHealthLabel.Text = opponent.health.ToString();
                     opponent.attackDamage = 10;
                     oppADLabel.Text = opponent.attackDamage.ToString();
+                    oppFDLabel.Text = opponent.getMOBFaction().ToString();
                 }
                 else if (opponent.r13spawn == true)
                 {
@@ -1512,6 +1534,7 @@ namespace M4HW1
                 displayRTB.Text += "The game is now over.\n";
                 attackButton.Visible = false;
                 displayRTB.Text += "Please close the game.\n";
+                MessageBox.Show("GAME OVER!");
             }
 
             displayRTB.SelectionStart = displayRTB.Text.Length;

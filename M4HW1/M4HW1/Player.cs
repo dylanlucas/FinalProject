@@ -11,7 +11,6 @@ namespace M4HW1
         private int rebelRep = 0;
         private int empireRep = 0;
         private int unaffilliatedRep = 0;
-        private int gold = 0;
         private bool receivedLoot = false;
 
         public Player()
