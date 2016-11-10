@@ -58,3 +58,12 @@ C:\Users\dylan\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.csprojResol
 C:\Users\dylan\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.Form1.resources
 C:\Users\dylan\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.Properties.Resources.resources
 C:\Users\dylan\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.csproj.GenerateResource.Cache
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\bin\Debug\M4HW1.exe.config
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.exe
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.pdb
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\bin\Debug\M4HW1.exe
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\bin\Debug\M4HW1.pdb
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.csprojResolveAssemblyReference.cache
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.Form1.resources
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.Properties.Resources.resources
+C:\Users\lucasd5495\Source\Repos\FinalProject\M4HW1\M4HW1\obj\Debug\M4HW1.csproj.GenerateResource.Cache

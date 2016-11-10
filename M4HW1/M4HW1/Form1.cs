@@ -82,6 +82,7 @@ namespace M4HW1
             //ROOM NIGHTMARE (Dream room before default location)
             nightmare.roomName = "A dark spooky scary place.\n";
             nightmare.roomDescription = "You see a floor under you but darkness everywhere else....\n";
+            nightmare.roomDescription += "There is something in this room that you must attack.\n";
             nightmare.northExit = false;
             nightmare.eastExit = false;
             nightmare.southExit = false;
@@ -227,7 +228,6 @@ namespace M4HW1
             playerInventoryListBox.Items.Add("Sword");
 
             //NPC SET UP
-            label9.Visible = false;
             label10.Visible = false;
             label11.Visible = false;
             label13.Visible = false;
@@ -519,17 +519,31 @@ namespace M4HW1
             }
             else if (playerInventoryListBox.SelectedItem.ToString() == "Sword")
             {
-                MessageBox.Show("You have equipped the Sword!");
-                playerOne.attackDamage = 50;
-                attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
-                sword.isEquiped = true;
+                if (sword.isEquiped == false)
+                {
+                    MessageBox.Show("You have equipped the Sword!");
+                    playerOne.attackDamage = 50;
+                    attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
+                    sword.isEquiped = true;
+                }
+                else if (sword.isEquiped == true)
+                {
+                    MessageBox.Show("You have already equipped the Sword!");
+                }
             }
             else if (playerInventoryListBox.SelectedItem.ToString() == "Excalibur")
             {
-                MessageBox.Show("You have equipped EXCALIBUR!");
-                playerOne.attackDamage = 9001;
-                attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
-                excalibur.isEquiped = true;
+                if (excalibur.isEquiped == true)
+                {
+                    MessageBox.Show("You have equipped EXCALIBUR!");
+                    playerOne.attackDamage = 9001;
+                    attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
+                    excalibur.isEquiped = true;
+                }
+                else if (excalibur.isEquiped == false)
+                {
+                    MessageBox.Show("You have already equipped Excalibur");
+                }
             }
         }
 
@@ -548,19 +562,29 @@ namespace M4HW1
             {
                 if (playerInventoryListBox.SelectedItem.ToString() == "Sword")
                 {
+                    MessageBox.Show("You have unequipped the Sword");
                     playerOne.attackDamage = 25;
                     attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
                     sword.isEquiped = false;
                 }
             }
+            else if (sword.isEquiped == false)
+            {
+                MessageBox.Show("The Sword is not equipped.");
+            }
             else if (excalibur.isEquiped == true)
             {
                 if (playerInventoryListBox.SelectedItem.ToString() == "Excalibur")
                 {
+                    MessageBox.Show("You have unequipped the Excalibur");
                     playerOne.attackDamage = 25;
                     attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
                     excalibur.isEquiped = false;
                 }
+            }
+            else if (excalibur.isEquiped == false)
+            {
+                MessageBox.Show("Excalibur is not equipped.");
             }
         }
 
@@ -619,7 +643,6 @@ namespace M4HW1
         {
             if (playerOne.currentLocation == r3)
             {
-                label9.Visible = true;
                 label10.Visible = true;
                 label11.Visible = true;
                 label13.Visible = true;
@@ -631,7 +654,6 @@ namespace M4HW1
             }
             else if (playerOne.currentLocation == r4)
             {
-                label9.Visible = true;
                 label10.Visible = true;
                 label11.Visible = true;
                 label13.Visible = true;
@@ -644,7 +666,6 @@ namespace M4HW1
             }
             else if (playerOne.currentLocation == r7)
             {
-                label9.Visible = true;
                 label10.Visible = true;
                 label11.Visible = true;
                 label13.Visible = true;
@@ -733,7 +754,7 @@ namespace M4HW1
 
                 if (textBox1.Text.ToLower() == "okay")
                 {
-                    npcRTB.Text += "The more you of them you take, the more you leave behind. What are they?";
+                    npcRTB.Text += "The more of them you take, the more you leave behind. What are they?";
                     textBox1.Text = "";
                     textBox1.Focus();
 
@@ -821,17 +842,6 @@ namespace M4HW1
                     npcRTB.SelectionStart = displayRTB.Text.Length;
                     npcRTB.ScrollToCaret();
 
-                    if (excalibur.received == false)
-                    {
-                        playerInventoryListBox.Items.Add("Excalibur");
-                        excalibur.received = true;
-                    }
-                    else if (excalibur.received == true)
-                    {
-                        MessageBox.Show("You already have this item!");
-                    }
-
-
                     MessageBox.Show("Say 'thank you'");
 
                     northButton.Visible = false;
@@ -861,6 +871,16 @@ namespace M4HW1
 
                     npcRTB.SelectionStart = displayRTB.Text.Length;
                     npcRTB.ScrollToCaret();
+
+                    if (excalibur.received == false)
+                    {
+                        playerInventoryListBox.Items.Add("Excalibur");
+                        excalibur.received = true;
+                    }
+                    else if (excalibur.received == true)
+                    {
+                        MessageBox.Show("You already have this item!");
+                    }
                 }
                 else if (textBox1.Text.ToLower() == "no")
                 {
@@ -920,30 +940,24 @@ namespace M4HW1
                     lootButton.Visible = false;
                     button1.Visible = false;
                     displayRTB.Visible = false;
-                    label14.Visible = false;
                     talkButton.Visible = false;
                     textBox1.Visible = false;
                     npcRTB.Visible = false;
                     label16.Visible = false;
-                    label15.Visible = false;
                     southButton.Visible = false;
                     eastButton.Visible = false;
                     northButton.Visible = false;
                     westButton.Visible = false;
                     locationRTB.Visible = false;
-                    label12.Visible = false;
-                    label1.Visible = false;
                     healthDisplayLabel.Visible = false;
                     label2.Visible = false;
                     label3.Visible = false;
                     attackDamageDisplayLabel.Visible = false;
-                    label17.Visible = false;
                     playerInventoryListBox.Visible = false;
                     inventoryButton.Visible = false;
                     equipButton.Visible = false;
                     useButton.Visible = false;
                     unequipButton.Visible = false;
-                    label5.Visible = false;
                     label6.Visible = false;
                     label7.Visible = false;
                     label8.Visible = false;
@@ -958,7 +972,6 @@ namespace M4HW1
                     npcFDDisplay.Visible = false;
                     label4.Visible = false;
                     playerStatusRTB.Visible = false;
-                    label9.Visible = false;
                     loadButton.Visible = false;
 
                 }
@@ -970,30 +983,24 @@ namespace M4HW1
                     lootButton.Visible = false;
                     button1.Visible = false;
                     displayRTB.Visible = false;
-                    label14.Visible = false;
                     talkButton.Visible = false;
                     textBox1.Visible = false;
                     npcRTB.Visible = false;
                     label16.Visible = false;
-                    label15.Visible = false;
                     southButton.Visible = false;
                     eastButton.Visible = false;
                     northButton.Visible = false;
                     westButton.Visible = false;
                     locationRTB.Visible = false;
-                    label12.Visible = false;
-                    label1.Visible = false;
                     healthDisplayLabel.Visible = false;
                     label2.Visible = false;
                     label3.Visible = false;
                     attackDamageDisplayLabel.Visible = false;
-                    label17.Visible = false;
                     playerInventoryListBox.Visible = false;
                     inventoryButton.Visible = false;
                     equipButton.Visible = false;
                     useButton.Visible = false;
                     unequipButton.Visible = false;
-                    label5.Visible = false;
                     label6.Visible = false;
                     label7.Visible = false;
                     label8.Visible = false;
@@ -1008,7 +1015,6 @@ namespace M4HW1
                     npcFDDisplay.Visible = false;
                     label4.Visible = false;
                     playerStatusRTB.Visible = false;
-                    label9.Visible = false;
                     loadButton.Visible = false;
                 }
 
@@ -1062,7 +1068,6 @@ namespace M4HW1
                     oppADLabel.Text = opponent.attackDamage.ToString();
                     oppFDLabel.Text = npc.getNPCFaction();
 
-                    label9.Visible = false;
                     label10.Visible = false;
                     label11.Visible = false;
                     label13.Visible = false;
