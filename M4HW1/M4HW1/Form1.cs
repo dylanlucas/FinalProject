@@ -83,6 +83,7 @@ namespace M4HW1
             nightmare.roomName = "A dark spooky scary place.\n";
             nightmare.roomDescription = "You see a floor under you but darkness everywhere else....\n";
             nightmare.roomDescription += "There is something in this room that you must attack.\n";
+            nightmare.roomDescription += "Your bags fill heavy... you should look in your inventory.\n";
             nightmare.northExit = false;
             nightmare.eastExit = false;
             nightmare.southExit = false;
@@ -247,6 +248,9 @@ namespace M4HW1
 
                 oppHealthLabel.Text = opponent.health.ToString();
                 oppADLabel.Text = opponent.attackDamage.ToString();
+
+                MessageBox.Show("Welcome to the game :)");
+                MessageBox.Show("You need to attack the monster in the room.");
             }
         }
 
@@ -302,6 +306,8 @@ namespace M4HW1
                 playerOne.currentLocation = r3;
                 locationRTB.Text += "Player One has moved East.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage6;
+                tabControl1.SelectedTab = tabPage2;
             }
             else if (playerOne.currentLocation == r4)
             {
@@ -314,6 +320,8 @@ namespace M4HW1
                 playerOne.currentLocation = r7;
                 locationRTB.Text += "Player One has moved East.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage6;
+                tabControl1.SelectedTab = tabPage2;
             }
             else if (playerOne.currentLocation == r8)
             {
@@ -326,12 +334,16 @@ namespace M4HW1
                 playerOne.currentLocation = r12;
                 locationRTB.Text += "Player One has moved East.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r13)
             {
                 playerOne.currentLocation = r11;
                 locationRTB.Text += "Player One has moved Easth.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else
             {
@@ -367,18 +379,24 @@ namespace M4HW1
                 playerOne.currentLocation = r9;
                 locationRTB.Text += "Player One has moved North.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r9)
             {
                 playerOne.currentLocation = r10;
                 locationRTB.Text += "Player One has moved North.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r10)
             {
                 playerOne.currentLocation = r11;
                 locationRTB.Text += "Player One has moved North.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r11)
             {
@@ -391,6 +409,9 @@ namespace M4HW1
                 playerOne.currentLocation = r15;
                 locationRTB.Text += "Player One has moved North.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
+
             }
             else
             {
@@ -408,6 +429,8 @@ namespace M4HW1
                 playerOne.currentLocation = r4;
                 locationRTB.Text += "Player One has moved West.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage6;
+                tabControl1.SelectedTab = tabPage2;
             }
             else if (playerOne.currentLocation == r3)
             {
@@ -432,6 +455,8 @@ namespace M4HW1
                 playerOne.currentLocation = r13;
                 locationRTB.Text += "Player One has moved West.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r12)
             {
@@ -479,18 +504,24 @@ namespace M4HW1
                 playerOne.currentLocation = r9;
                 locationRTB.Text += "Player One has moved South.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r11)
             {
                 playerOne.currentLocation = r10;
                 locationRTB.Text += "Player One has moved South.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (playerOne.currentLocation == r14)
             {
                 playerOne.currentLocation = r11;
                 locationRTB.Text += "Player One has moved South.\n\n";
                 locationRTB.Text += playerOne.currentLocation.ToString();
+                tabControl3.SelectedTab = tabPage5;
+                tabControl1.SelectedTab = tabPage1;
             }
             else if (oppHead.received == true || document.received == true)
             {
