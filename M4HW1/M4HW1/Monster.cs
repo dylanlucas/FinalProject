@@ -16,7 +16,7 @@ namespace M4HW1
             attackDamage = 20;
             canAttack = true;
 
-            isDead = dead;
+            isDead = false;
         }
 
         public bool dead { get { return isDead; } set { isDead = value; } }

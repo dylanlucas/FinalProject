@@ -10,13 +10,15 @@ namespace M4HW1
     {
         private int rebelRep = 0;
         private int empireRep = 0;
-        private int unaffilliatedRep = 0;
+        private int unaffilliatedRep = 0;        
         private bool receivedLoot = false;
+
+        public int baseDamage = 30;
 
         public Player()
         {
             health = 100;
-            attackDamage = 25;
+            attackDamage = 30;
             canAttack = true;
 
             rebelRep = rebel;

@@ -546,34 +546,40 @@ namespace M4HW1
         {
             if (playerInventoryListBox.SelectedItem.ToString() == "")
             {
-                MessageBox.Show("Please select an item!");
+                MessageBox.Show("Please select an item to equip.");
             }
             else if (playerInventoryListBox.SelectedItem.ToString() == "Sword")
             {
-                if (sword.isEquiped == false)
+                if (excalibur.isEquiped == true)
                 {
-                    MessageBox.Show("You have equipped the Sword!");
-                    playerOne.attackDamage = 50;
-                    attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
-                    sword.isEquiped = true;
+                    MessageBox.Show("Unequip Excalibur in order to equip the Sword.");
                 }
-                else if (sword.isEquiped == true)
+                else if (excalibur.isEquiped == false)
                 {
-                    MessageBox.Show("You have already equipped the Sword!");
+                    if (sword.isEquiped == false)
+                    {
+                        MessageBox.Show("You have equipped the Sword!");
+                        playerOne.attackDamage = 50;
+                        attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
+                        sword.isEquiped = true;
+                    }
                 }
             }
             else if (playerInventoryListBox.SelectedItem.ToString() == "Excalibur")
             {
-                if (excalibur.isEquiped == true)
+                if (sword.isEquiped == true)
                 {
-                    MessageBox.Show("You have equipped EXCALIBUR!");
-                    playerOne.attackDamage = 9001;
-                    attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
-                    excalibur.isEquiped = true;
+                    MessageBox.Show("Unequip the Sword in order to equip Excalibur");
                 }
-                else if (excalibur.isEquiped == false)
+                else if (sword.isEquiped == false)
                 {
-                    MessageBox.Show("You have already equipped Excalibur");
+                    if (excalibur.isEquiped == false)
+                    {
+                        MessageBox.Show("You have equipped Excalibur!");
+                        playerOne.attackDamage = 9001;
+                        attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
+                        excalibur.isEquiped = true;
+                    }
                 }
             }
         }
@@ -587,35 +593,35 @@ namespace M4HW1
         {
             if (playerInventoryListBox.SelectedItem.ToString() == "")
             {
-                MessageBox.Show("Please select an item to unequip!");
+                MessageBox.Show("Please select an item to unequip.");
             }
-            else if (sword.isEquiped == true)
+            else if (playerInventoryListBox.SelectedItem.ToString() == "Sword")
             {
-                if (playerInventoryListBox.SelectedItem.ToString() == "Sword")
+                if (sword.isEquiped == true)
                 {
-                    MessageBox.Show("You have unequipped the Sword");
-                    playerOne.attackDamage = 25;
+                    MessageBox.Show("You have unequipped the Sword.");
+                    playerOne.attackDamage = playerOne.baseDamage;
                     attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
                     sword.isEquiped = false;
                 }
-            }
-            else if (sword.isEquiped == false)
-            {
-                MessageBox.Show("The Sword is not equipped.");
-            }
-            else if (excalibur.isEquiped == true)
-            {
-                if (playerInventoryListBox.SelectedItem.ToString() == "Excalibur")
+                else
                 {
-                    MessageBox.Show("You have unequipped the Excalibur");
-                    playerOne.attackDamage = 25;
+                    MessageBox.Show("The Sword is not equipped.");
+                }
+            }
+            else if (playerInventoryListBox.SelectedItem.ToString() == "Excalibur")
+            {
+                if (excalibur.isEquiped == true)
+                {
+                    MessageBox.Show("You have unequipped Excalibur.");
+                    playerOne.attackDamage = playerOne.baseDamage;
                     attackDamageDisplayLabel.Text = playerOne.attackDamage.ToString();
                     excalibur.isEquiped = false;
                 }
-            }
-            else if (excalibur.isEquiped == false)
-            {
-                MessageBox.Show("Excalibur is not equipped.");
+                else
+                {
+                    MessageBox.Show("Excalibur is not equipped.");
+                }
             }
         }
 
